@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ShoppingList.Data;
+using ShoppingList.Services;
 
 namespace ShoppingList
 {
@@ -32,6 +33,8 @@ namespace ShoppingList
                         builder.MigrationsAssembly("ShoppingList")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<ProductService>();
+            services.AddScoped<PurchaseService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
